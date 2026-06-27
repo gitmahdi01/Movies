@@ -8,7 +8,21 @@
   display: flex;
   flex-direction: column;
 }
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+@media (max-width: 480px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+}
 .movie-card:hover {
   transform: translateY(-5px);
 }
@@ -43,7 +57,22 @@
   justify-content: flex-end;
   padding: 1rem;
 }
+@media (max-width: 768px), (hover: none) {
+  .movie-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.85)
+    );
+  }
+}
 
+@media (hover: hover) {
+  .movie-card:hover {
+    transform: translateY(-5px);
+  }
+}
 .movie-card:hover .movie-overlay {
   opacity: 1;
 }
