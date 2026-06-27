@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "../css/MovieCard.css"
 import { useMovieContext } from "../contexts/MovieContext"
-import { getWatchProviders } from "../services/movieApi" // adjust path to match your project
+import { getWatchProviders } from "../services/api";
 
 function MovieCard({movie}) {
     const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext()
